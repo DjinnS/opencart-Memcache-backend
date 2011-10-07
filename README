@@ -6,9 +6,17 @@ You need to install memcache pecl extension:
 
 Add the following lines to your config.php file:
 
-// CACHE
-define('CACHE_BACKEND','mc');
-define('MC_HOST','localhost');
-define('MC_PORT','11211');
+	// CACHE
+	define('CACHE_BACKEND','mc');
+	define('MC_HOST','localhost');
+	define('MC_PORT','11211');
 
 Remember to change MC_HOST if memcached isn't on the same machine !
+
+You can now cache your HTML block (as in Magento) via the render() function.
+
+For example, if you want cache 60 secondes you footer block, you need to add the value 60 in parameter to the render function on the controler file for the footer.
+
+Replace "$this->render()" by "$this->render(60)" in the file "catalog/controller/common/footer.php" (~ line 53).
+
+In future version, cache life time management will be available.
