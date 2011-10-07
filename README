@@ -1,0 +1,14 @@
+You need to install memcache pecl extension:
+
+# pecl install memcache
+
+(tested with version 3.0.5)
+
+Add the following lines to your config.php file:
+
+// CACHE
+define('CACHE_BACKEND','mc');
+define('MC_HOST','localhost');
+define('MC_PORT','11211');
+
+Remember to change MC_HOST if memcached isn't on the same machine !
